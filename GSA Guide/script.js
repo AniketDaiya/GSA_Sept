@@ -117,6 +117,12 @@
         }
       });
     });
+    window.addEventListener("resize", function () {
+      document.querySelectorAll(".prompt-head[aria-expanded='true']").forEach(function (h) {
+        var body = h.nextElementSibling;
+        if (body) body.style.maxHeight = body.scrollHeight + "px";
+      });
+    });
   }
 
   function wireLightbox() {
